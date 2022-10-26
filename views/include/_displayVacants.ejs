@@ -1,0 +1,36 @@
+<% vacants.forEach((row, index)=> { %>
+
+    <tr class="align-middle">
+    
+           
+
+            <% if (row.disponibilite === 'disponible') { %>
+                <td><img src="img/open_icon.png" alt="Open" ></td>
+                <td style="display:none;"><%= row.disponibilite %></td>
+                <%} else { %>
+                <td><img src="img/closed_icon.png" alt="Closed"></td>
+                <td style="display:none;"><%= row.disponibilite %></td>
+                <% } %>
+    
+        
+        <td><%= row.sujet %></td>
+        <td><%= row.encadreur %></td>
+        <td><%= row.type_stage %></td>
+        <td><%= row.date_debut %></td>
+        <td><%= row.secteur %></td>
+        
+        
+        <td>
+            
+            
+               
+          
+ 
+    <a  title="Voir la liste de postulation" href="" class="text-success bt_emp" data-id="<%= row._id %>"><i class="fas fa-address-card fa-lg mx-1" style="color: darkslateblue;"></i></a>
+    
+    <a  title="Modifier les details du poste" href="/edit_vacant/<%= row._id %>" class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
+    <a  title="Supprimer l'offre" href="/delete_vacant/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+        </td>
+    </tr>
+    <% }) %>
+    

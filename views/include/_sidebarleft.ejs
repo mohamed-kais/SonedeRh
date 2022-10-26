@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Sidebar Menu  | CodingLab </title>
+    <link rel="stylesheet" href="../css/sidebarstyle.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <i class='fa fa-water'></i>
+        <div class="logo_name">  SONEDE<b>RH</b></div>
+      </div>
+      <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Search...">
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="/index">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="links_name">Vos Offres d'emploi</span>
+        </a>
+        <span class="tooltip">Vos Offres d'emploi</span>
+      </li>
+      <li>
+        <a href="/afficher_users">
+          <i class='bx bx-happy' ></i>
+          <span class="links_name">Les utilisateurs</span>
+        </a>
+        <span class="tooltip">Les utilisateurs</span>
+      </li>
+      <li>
+        <a href="/postulations">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Les postulants</span>
+        </a>
+        <span class="tooltip">Les postulants</span>
+      </li>
+      <li>
+        <a href="/contact">
+          <i class='bx bx-chat' ></i>
+          <span class="links_name">Contactez les candidats</span>
+        </a>
+        <span class="tooltip">Contactez les candidats</span>
+      </li>
+      
+    </ul>
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          
+          <div class="name_job">
+            <div class="name">kais</div>
+            <div class="job">Software Ingineer</div>
+          </div>
+        </div>
+        <a href="/"><i class='bx bx-log-out' id="log_out" ></i></a>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+   let btn = document.querySelector("#btn");
+   let sidebar = document.querySelector(".sidebar");
+   let searchBtn = document.querySelector(".bx-search");
+
+   btn.onclick = function() {
+     sidebar.classList.toggle("active");
+   }
+   searchBtn.onclick = function() {
+     sidebar.classList.toggle("active");
+   }
+
+  </script>
+
+</body>
+</html>

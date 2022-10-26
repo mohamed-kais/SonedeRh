@@ -1,0 +1,1 @@
+module.exports = "mongodb+srv://admin:admin123@cluster0.pdyuq.mongodb.net/SONEDEDB?retryWrites=true&w=majority";

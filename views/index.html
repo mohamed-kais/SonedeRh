@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONEDE RH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <a href="/" class="nav-brand text-dark">Systeme de recrutement </a>
+                    </div>
+                </div>
+        </nav>
+    </header>
+
+
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/ajouter_offre" class="border-shadow">
+                    <span class="text-gradient"><i class="fas fa-plus"></i> CRÉER UNE OFFRE D'EMBAUCHE </span>
+                </a>
+            </div>
+
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Priorité</th>
+                            <th>Recrutement</th>
+                            <th>Date de création</th>
+                            <th>Date de clôture</th>
+                            <th>Recruteur</th>
+                            
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Niveau 1</td>
+                            <td>Démarcheur</td>
+                            <td>26/04/2021</td>
+                            <td>31/05/2021</td>
+                            <td>Ben Barhoumi</td>
+                            <td>SONEDE Megrine</td>
+                            <td>Ouvert</td>
+                            <td><a href="#" class="btn border-shadow update">
+                                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                            </a>
+                            <a class="btn border-shadow delete">
+                                <span class="text-gradient"><i class="fas fa-times"></i></span>
+                            </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+
+    </main>
+    
+</body>
+</html>

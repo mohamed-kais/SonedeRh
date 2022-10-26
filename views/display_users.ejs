@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/sonede1.png">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- bootstrap jquery -->
+  
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/mark.js/8.6.0/jquery.mark.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- bootstrap sidebar stylesheet -->
+    <link href="css/bootstrap-sidebar.min.css" rel="stylesheet">
+
+    <title>listes des utilisateurs</title>
+
+</head>
+<style>
+
+body{
+    
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+.main-body {
+    padding: 15px;
+}
+
+.profile-card-4 {
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius:3px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 3px auto;
+    
+}
+
+.profile-card-4 img {
+    transition: all 0.25s linear;
+}
+
+.profile-card-4 .profile-content {
+    position: relative;
+    padding: 15px;
+    background-color: #FFF;
+}
+
+.profile-card-4 .profile-name {
+    font-weight: bold;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: -70px;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+}
+
+.profile-card-4 .profile-name p {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.profile-card-4 .profile-description {
+    color: #777;
+    font-size: 12px;
+    padding: 3px;
+}
+
+.profile-card-4 .profile-overview {
+    padding: 15px 0px;
+}
+
+.profile-card-4 .profile-overview p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+}
+
+.profile-card-4 .profile-overview h4 {
+    color: #273751;
+    font-weight: bold;
+}
+
+.profile-card-4 .profile-content::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background-color: #FFF;
+    z-index: 0;
+    transform: skewY(3deg);
+}
+
+.profile-card-4:hover img {
+    transform: rotate(5deg) scale(1.1, 1.1);
+    filter: brightness(110%);
+}
+
+.br-icon
+        {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 100;
+            height: 45px;
+            width: 45px;
+            border-radius: 10%;
+            background-color: #e91e63;
+            box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.58);
+            -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+            -webkit-transform: scale(0.92);
+                      transform: scale(0.92);
+        }
+        
+        .br-icon2
+        {
+            position: fixed;
+            bottom: 10px;
+            right: 60px;
+            z-index: 100;
+            height: 45px;
+            width: 45px;
+           border-radius: 10%;
+            background-color: #e91e63;
+            box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.58);
+            -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+            -webkit-transform: scale(0.92);
+                      transform: scale(0.92);
+        }
+       
+
+
+</style>
+<body>
+    
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-dark  navbar-fixed-top">
+          <div class="container-fluid">
+              
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><span class="logo"> Bienvenue, <%=username%></span>
+              </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/ajouter_emploi"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Ajouter une offre d'emploi</a>
+                </li>
+                <li><a href="/display_archive_emploi"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> ARCHIVE</a>
+                </li>
+                
+                <li><a href="/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+        <!-- Boostrap Sidebar  - Collapsible Menu Items -->
+        <!-- Sidebar -->
+        <div id="bootstrap-sidebar" class="dark-theme text-menu">
+          <ul class="sidebar-nav">
+            <li> <a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <span class="menu-text">Acceuil</span></a>
+            </li>
+            <li> <a href="/display_emploi"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> <span class="menu-text">Offres d'emploi</span></a>
+            </li>
+            <li> <a href="/display_vacant"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> <span class="menu-text">Stage et alternance</span></a>
+            </li>
+            <li class="active"> <a href="/display_users"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="menu-text">Utilisateurs</span></a>
+            </li>
+            
+           
+            
+        
+          </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+    </div>
+
+        
+         <div id="main-page-content">
+
+            <div class="container">
+                <div class="main-body">
+
+           
+
+            <% if( message ){ %>
+                <div classs="container p-5">
+                    <div class="row no-gutters navbar-fixed-bottom">
+                        <div class="col-lg-3 col-md-20">
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                    ×</button>
+                               <span class="glyphicon glyphicon-ok"></span> <strong>Succès!</strong>
+                                <hr class="message-inner-separator">
+                                <p>
+                                    <%= message.message %>.</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                 
+                  
+        <%}%>
+
+    <div class="container profile-page">
+
+
+        
+            <div class="row">
+                <% if( users !="" ){ %>
+                <% users.forEach(user=>{ %>
+                
+                    <div class="col-md-3">
+                        
+                        
+                        <div class="profile-card-4 text-center"><img style="
+                            background-size: cover;
+                            width: 300px;
+                            height: 300px;
+                            " src="<%=user.img%>" class="img img-responsive" alt="" name="image" id="image">
+                            <div class="profile-content">
+                               
+                        
+                            
+                                <div class="profile-description"><b><%=user.username%></b></div>
+                                <div class="profile-description"><%=user.cin%></div>
+                                <div class="profile-description"><%=user.email%></div>
+                                
+                                
+                               
+                                <div class="row">
+                                    
+                                        <div>
+                                            <a href="/details_user/<%= user._id %>"> <button class="btn btn-primary btn-round">Details</button></a>
+                                           <a href="/delete_user/<%= user._id %>"> <button class="btn btn-primary btn-round btn-danger">Supprimer</button></a>
+                                        </div>
+                                    
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <% }) %>
+                <%}else {%>
+                    <h1 class="text-center text-secondary mt-5">No users found in the database !</h1>
+                    <%}%>
+            
+            </div>
+    </div>
+
+
+</div></div>        
+            
+        
+
+<div class="br-icon"><a href="/display_users"><span style="position: absolute; top: 50%;left: 50%;
+    -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);color: rgb(0, 0, 0);
+    font-size: 20px;font-weight: 600;" 
+    class="glyphicon glyphicon-th"></span></a></div>
+
+<div class="br-icon2"><a href="/display_users_list"><span style="position: absolute; top: 50%;left: 50%;
+    -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);color: rgb(0, 0, 0);
+    font-size: 20px;font-weight: 600;" 
+    class="glyphicon glyphicon-list"></span></a></div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/sidebar.js"></script>
+
+
+</html>
+
+
+
+           

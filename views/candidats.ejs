@@ -1,0 +1,35 @@
+<%-include('include/_header')%>
+<%-include('include/_sidebarleft')%>
+
+<main id="site-main">
+    <div class="container">
+
+        <form action="/" method="POST">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="bg-primary">Liste des Candidats postulants</th>
+                    </tr>
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Nom et Prenom</th>
+                        <th>date de naissance</th>
+                        <th>Cin</th>
+                        <th>E-Mail</th>
+                        <th>Telephone</th>
+                        <th>Score</th>           
+                        <th>Action</th> 
+                    </tr>
+                    
+                    </thead></thead>
+                <tbody>
+                    <%-include('include/_showcon')%>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+</main>
+
+
+<%-include('include/_footer')%>

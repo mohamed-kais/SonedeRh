@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pure HTML/CSS standalone survey form for the medical/healthcare Force Framework</title>
+  <link rel="stylesheet" href="./css/user_info.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">  
+		<form class="contact" action="" method="post">
+			<h3>Survey Form</h3>
+			
+			<div class="col50 colleft">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="">Patient name</label>
+						<input placeholder="Patient name" type="text" required autofocus>
+					</div>
+					<div class="wd50">
+						<label name="">Unique registration ID</label>
+						<input placeholder="Unique registration ID" type="text" required>
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="">Phone number</label>
+						<input placeholder="Phone number" type="tel" required>
+					</div>
+					<div class="wd50">
+						<label name="">Patient History</label>
+						<input placeholder="Doctor consulted" type="url" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col50 colright">
+				<div class="col50 colleft">
+					<div class="wd50">
+						<label name="">Doctor consulted</label>
+						<input placeholder="Doctor consulted" type="text" required>
+					</div>
+					<div class="wd50">
+						<label name="">Registered</label>
+						<select>
+							<option value=" ">option 1</option>
+							<option value=" ">option 2</option>
+							<option value=" ">option 3</option>
+							<option value=" ">option 4</option>
+						</select> 
+					</div>
+				</div>
+				<div class="col50 colright">
+					<div class="wd50">
+						<label name="">Clinic visited</label>
+						<input placeholder="Clinic visited" type="text" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd50">
+					<label name="">Time Or did you have to wait for more then 15 minutes?</label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="">Will you be starting the treatment ? (in case not registered)</label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Experience with the doctor?</label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+				<div class="wd100">
+					<label name="">If yes When?</label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="wd100">
+				<label name="">Reason for Not Taking Treatment Or Giving less rating with DR experience</label>
+				<p><strong>GRID Multiple selection</strong></p>
+			</div>
+
+			<div class="wd100 question-checkbox">
+				<div class="col50 colleft">
+					<p>Expensive</p>
+					<label name=""><input type="checkbox" value=""> Price</label>
+
+					<p>Not sufficient time</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Was pushy/Only focused on price</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>No assurance was given</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Long term Packages</p>
+					<label name=""><input type="checkbox" value=""> Treatment Duration</label>
+
+					<p>Dint allow to meet Doctor</p>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Washroom</p>
+					<label name=""><input type="checkbox" value=""> Hygiene</label>
+
+					<p>Treatment machines not clean</p>
+					<label name=""><input type="checkbox" value=""> Hygiene</label>
+
+					<p>No proper check up by</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+				</div>
+
+				<div class="col50 colright">
+					<p>No option for part payment given</p>
+					<label name=""><input type="checkbox" value=""> Price</label>
+
+					<p>Questions not answered/confident</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Rude</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Not Satisfied in general</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Aliment not treated at DRB</p>
+					<label name=""><input type="checkbox" value=""> Treatment Duration</label>
+
+					<p>Give medicines for 2 days &amp; Ask to come later</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Unprofessional Behavior/getup</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+
+					<p>Asked to Pay today or No discount</p>
+					<label name=""><input type="checkbox" value=""> Doctor</label>
+					<label name=""><input type="checkbox" value=""> Clinic/PRO</label>
+					<label name=""><input type="checkbox" value=""> Discount</label>
+				</div>
+			</div>
+
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="">Rate Overall experience (5 being Excellent &amp; 1 being lowest )</label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Sir/ Mam if we can find a solution for your concern would you be "ok" to receive a call back? (in case of any concerns raised) </label>
+					<select>
+						<option value=" ">option 1</option>
+						<option value=" ">option 2</option>
+						<option value=" ">option 3</option>
+						<option value=" ">option 4</option>
+					</select> 
+				</div>
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="col50 colleft">
+				<div class="wd100">
+					<label name="">Doctor quote (to be filled only if required)</label>
+					<textarea placeholder="Insert text here ..." required></textarea>
+				</div>
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Patient can pay ( to be filled only if required)</label>
+					<textarea placeholder="Insert text here ..." required></textarea>
+				</div>
+			</div>
+
+			<div class="wd100">
+				<label name="">Notes</label>
+				<textarea placeholder="Insert text here ..." required></textarea>
+			</div>
+			
+			<div class="wd100">
+				<button name="submit" type="submit" id="" data-submit="...Sending">Submit</button>
+			</div>
+		</form>
+	</div>
+
+<p style="font-style: italic; color: #2196f3; font-size: 18px; text-align: center; margin-top: 50px; margin-bottom: 20px;">Follow me on Twitter: <a href="https://twitter.com/mrdogra007/" target="_blank">@mrdogra007</a></p>
+<!-- partial -->
+  <script  src="./js/user_info.js"></script>
+
+</body>
+</html>

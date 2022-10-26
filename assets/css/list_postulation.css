@@ -1,0 +1,228 @@
+body{
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 13px;
+}
+.container-wrapper{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	max-width: 95%;
+	margin: auto auto;
+}
+.heading{
+	border-bottom: 1px solid #002949;
+	margin-bottom: 20px;
+}
+.menu-panel ul.menu{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-panel ul.menu li{
+	border: 1px solid #d4d4d4;
+	margin-bottom: -1px;
+}
+.menu-panel ul.menu li a{
+	color:#444;
+	display: block;
+	padding: 10px 25px;
+	font-size: 14px;
+	box-shadow: inset 10px 0 0 #0083C3;
+	transition: all 0.2s ease-in;
+}
+.menu-panel ul.menu li a:hover,
+.menu-panel ul.menu li.active a
+{
+	box-shadow: inset 90vw 0 0 #002949;
+	color: #fff;
+	text-decoration: none;
+}
+.menu-panel ul.menu li a:after{
+	content: '\f0a9';
+	font-family: FontAwesome;
+	float: right;
+	font-size: 15px;
+}
+.time{
+  min-width: 75px;
+  height: 100%;
+  background-color: #a4c3ca;
+  float: left;
+  margin-right: 20px;
+  line-height: 38px;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  position: absolute;
+}
+.tab-content{
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	padding: 20px;
+}
+.personal-sec{
+	background-color: #002949;
+	padding:15px;
+	color: #fff;
+}
+.margin0{
+	margin: 0;
+}
+.margint5{
+	margin-top:5px;
+}
+.margint20{
+	margin-top: 20px;
+}
+.marginb15{
+	margin-bottom: 15px;
+}
+.personal-sec .name{
+	margin-bottom: 25px;
+}
+.personal-sec .name:before{
+	content: '\f007';
+	font-family: FontAwesome;
+  float: left;
+  font-size: 32px;
+  margin-right: 10px;
+}
+.personal-sec .contact-info i{
+	margin-right: 10px;
+  width: 20px;
+  height: 23px;
+  text-align: center;
+}
+.personal-sec.sec-footer{
+	background-color: #001b2c;
+	padding:0;
+}
+ul.lead-score{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul.lead-score li{
+	width: 33.3%;
+	text-align: center;
+	border-right: 2px solid #002949;
+	float: left;
+}
+ul.lead-score li:last-child{
+	border-right: none;
+}
+ul.lead-score li .score{
+	font-size: 18px;
+	font-weight: 600;
+	margin: 10px 0 0 0;
+}
+ul.lead-score li .score-label{
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+.lead-icon i{
+	font-size: 45px;
+	margin-right: 20px;
+}
+.block{
+	display: block;
+}
+.right-panel .well{
+	padding: 10px;
+}
+.form-control{
+	height: 26px;
+	font-size: 13px;
+}
+.history-row{
+	display: table;
+	margin-bottom: 5px;
+	position: relative;
+	width: 100%;
+}
+.history-row p{
+	padding-left: 80px;
+	margin: 10px;
+	vertical-align: middle;
+}
+.popup-buttons .btn{
+	font-size: 13px;
+}
+.popup-buttons i {
+	margin-right: 5px;
+	color: #002949;
+}
+.lead-property .sec-header{
+	border: 1px solid #dbdbdb;
+	padding: 8px;
+	background: #f6f6f6;
+}
+.lead-property .sec-body{
+	border: 1px solid #dbdbdb;
+	margin-top: -1px;
+	padding: 15px 5px; 
+}
+
+/* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+
+.timeline {
+  margin: 1em auto;
+  position: relative;
+  max-width: 100%;
+}
+.timeline:before {
+  background-color: #002949;
+  content: '';
+  margin-left: -1px;
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 2px;
+  height: 100%;
+}
+.timeline-event {
+  position: relative;
+  list-style: none;
+}
+.timeline-event-copy {
+  padding: 1em;
+  position: relative;
+  top: -0.875em;
+  left: 0;
+  width: 100%;
+}
+.timeline-event-copy h3 {
+  font-size: 1.75em;
+}
+.timeline-event-copy h4 {
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+  font-weight: 600;
+}
+.timeline-event-copy strong {
+  font-weight: 700;
+}
+.timeline-event-icon {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: #002949;
+  outline: 10px solid white;
+  display: block;
+  margin: 0.5em 0.5em 0.5em -0.5em;
+  position: absolute;
+  top: 0;
+  left: -14px;
+  width: 1em;
+  height: 1em;
+}
+.timeline-event-thumbnail {
+  color: white;
+  font-weight: 600;
+  background-color: #002949;
+  display: inline-block;
+  margin-bottom: 1.2em;
+  padding: 0.25em 1em 0.2em 1em;
+}

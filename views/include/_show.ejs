@@ -1,0 +1,34 @@
+
+<% for(var i = 0; i < offres.length; i++) { %>
+    
+<tr class="listitem">
+    <td id="td-priorite" class="td-priorite"><%= offres[i].priorite %></td>
+    <td id="td-titre" class="td-titre"><%= offres[i].titre %></td>
+    <td id="dd"><%= moment(offres[i].date_debut).format('L'); %></td>
+    <td id="pf"><%= moment(offres[i].date_fin).format('L'); %> (<%= moment(offres[i].date_fin).fromNow() %>) </td>
+    <td id="td-recruteur" class="td-recruteur"><%= offres[i].recruteur %></td>
+    
+    <td id="td-status" class="td-status"><%= offres[i].status %></td>
+  
+    <td>
+       
+    <!-- <a title="Mise a jour de l'offre" class="btn border-shadow update" href="/maj_offre?id=<%= offres[i]._id%>">
+            <span  class="text-gradient"><i class="fas fa-pen"></i></span>
+    </a> -->
+    <!-- <a title="Liste des Candidats" class="btn border-shadow user"  href="/postulants?id=<%= offres[i]._id%>">
+        <span  class="text-gradient"><i class="fas fa-user"></i></span>
+    </a> -->
+    <a title="Afficher la liste des postulants " href="/details?id=<%= offres[i]._id%>" class="btn border-shadow update">
+        <span  class="text-gradient"><i class="fas fa-list-alt"></i></span>
+    </a>
+    <a title="Supprimer l'offre d'embauche" class="btn border-shadow delete" data-id="<%= offres[i]._id%>">
+        <span  class="text-gradient"><i class="fas fa-times"></i></span>
+    </a>
+   
+    
+
+    </td>
+</tr>
+
+
+<% } %>

@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row my-4">
+        <div class="col-lg-12">
+<% if( message ){ %>
+            <div classs="container p-5">
+                <div class="row no-gutters fixed-bottom">
+                  <div class="col-lg-3 col-md-20">
+                    <div class="alert alert-<%= message.type %> alert-dismissible fade show mt-3" role="alert">
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                       <h4 class="alert-heading"><i class="glyphicon glyphicon-info-sign"></i>ATTENTION !</h4>
+                        <p>  <%= message.message %>.</p>
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+<%}%>
+            <div class="table-responsive">
+                <% if( emplois !="" ){ %>
+                    <table id="table" class="table table-striped text-center my-3">
+                        <thead style="font-size:15px;">
+                            <tr class="table-dark">
+                                <th>Priorité d'embauche</th>
+                                <th>Image</th>
+                                <th>Fonction</th>
+                                <th>Recruteur</th>
+                                <th>Contrat</th>
+                                <th>Date de lancement</th>
+                                <th>Date de clôture</th>
+                                <th>District</th>
+                                <th>Secteur</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%-include('include/_displayOffres')%>
+                        </tbody>
+                    </table>
+                    <%}else {%>
+                        <h1 class="text-center text-secondary mt-5">No users found in the database !</h1>
+                        <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"
+></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("table").DataTable({
+            order : [0, 'desc']
+            
+            
+        });
+    });
+</script>

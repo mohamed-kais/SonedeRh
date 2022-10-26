@@ -1,0 +1,62 @@
+npm install @angular/cli
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+ng new ui
+ng serve
+npm i bootstrap@next --save
+npm i jquery --save
+
+http://localhost:4200 frontend
+http://localhost:3000 backend
+
+ng g c header - footer - sidebar
+
+
+
+
+
+
+
+Non pas vraiment, la mission reste presque la même juste un changement radicale au niveau
+des exigences poser par la SONEDE qui varie d'une semaine à l'autre qui peut etre un changement
+au niveau conceptuel ou aussi au niveau du backend/frontend ( développement).
+
+Assister aux reunions et aux rendez-vous face à face à l'époque du coronavirus.
+
+- D'être a l'heure chaque fois pour une reunion .
+- D'accomplirles tâches qui m'ont été confiées avec succès et dans les délais.
+- De bien respecter ceux qui travaille dans la SONEDE et d'écouter attentivement a leurs
+exigences.
+
+Je trouve que la partie la plus difficile été de suivre le changement consécutif des exigences dans
+la SONEDE, une sorte de backtracking au niveau de la réalisation des tâches du projet qui à la fois
+rend le projet plus sophistiqué et meilleur mais qui fait perdre encore plus de temps dans son
+avancement.
+
+En essayant de suivre les consigne avec tout le Sang-froid du monde mais bien sure en fournissant
+les résultats attendus.
+
+Déja le travaille dans l'environnement professionnel pour la toute premier fois, les reunions de chaque
+semaines avec une équipe de professionnel, la responsabilité d'étre a l'heure pour chaque reunion et
+bien entendu le projet lui même qui s'avère être un petit peu difficile au niveau technique digne d'un
+vrai ingénieur en informatique.
+
+Un changement radicale dans le travaille en équipe par rapport au début de stage, maintenant je me sens
+encore plus sûr de moi-même et plus fluide dans mon rendement quand je me trouve entourer de personne
+responsable, il suffit juste d'écouter et d'essayer de comprendre la façon de voir les choses d'autrui et faire
+avec .
+ 
+Comme exemple je cite:  les exigences des ressources humaines de la SONEDE et le travaille avec eux.
+
+
+Parceque dans certaines cas je suis capable d'agir sans avoir recours à autrui et prendre des décisions
+libres mais bien entendue qui reste dans le cadre général du projet tel que par exemple le choix des
+technologies suggérer pour le projet.
+
+Pour être honnête je n'ai pas encore expérimenté de difficultés professionnelles dans la société ou
+par rapport au stage mais je suis sûre que je peut endurer quelque soit la situation et je dirais même
+que le stage lui même nécessite de la resilience pour l'accomplissement du projet.
+
+Rien a changer par rapport au debut de stage, Car pour l'instant toutes les tâches qui m'ont été
+confiées ont été delivrée a temps peut-être bien la seule difficulté étais dans la realisation du cahier
+des charges qui a pris plus de temps que prévu et le changement brusque et quotidien dans les
+exigences de la SONEDE .

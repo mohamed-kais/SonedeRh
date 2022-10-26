@@ -1,0 +1,27 @@
+<% users.forEach((row, index)=> { %>
+
+    <tr class="align-middle">
+    
+        <td><%= row.username %></td>
+        <td><%= row.cin %></td>
+        <td><%= row.email %></td>
+        <td><%= row.tel %></td>
+        <td><%= row.score %></td>
+        
+        
+<td>
+            
+            
+               
+   
+        <a title="Voir le profil du candidat" href="/details_user/<%= row._id %>" class="text-success"><i class="fas fa-info-circle" style="font-size: 130%;color: blue;"></i></a>
+   
+        
+            
+
+
+    <a title="Supprimer l'utilisateur" href="/delete_user/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+</td>
+    </tr>
+    <% }) %>
+    

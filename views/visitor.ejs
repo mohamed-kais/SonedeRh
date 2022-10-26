@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="img/sonede1.png">
+    <title>SonedeRH Officiel</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/display_emploi_user2.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/popup3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+   
+  </head>
+
+<body>
+      <!--Main Navigation-->
+  <header>
+    <!-- Intro settings -->
+    <style>
+      #intro {
+        /* Margin to fix overlapping fixed navbar */
+        margin-top: 58px;
+      }
+
+      @media (max-width: 991px) {
+        #intro {
+          /* Margin to fix overlapping fixed navbar */
+          margin-top: 45px;
+        }
+      }
+
+.bg-image{
+    width: 400px;
+  height: 270px;
+  
+  border:2px solid #FFFFFF;
+ 
+}
+.bg-image img {
+  height: 100%;
+  width: 100%;
+  
+}
+
+@media (min-width: 37.5em) {
+  .button {
+    width: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.button {
+  
+  border: 0;
+  color: #fefbef;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1;
+ 
+  
+}
+.button--secondary.button--solid {
+  background-color: #357edd;
+}
+.button--secondary.button--hollow {
+  color: #357edd;
+  border: 1px solid #357edd;
+  
+}
+.button--small {
+  min-width: 6rem;
+  border-radius: 0.5rem;
+  font-size: 0.8em;
+  min-height: 2rem;
+}
+.button--small.button--hollow {
+  border-width: 2px;
+}
+
+#header {
+  margin-bottom: 2%;
+  justify-content: space-between;
+  flex-direction: column;
+
+ 
+}
+
+#header-content {
+  justify-content: flex-end;
+  display: flex;
+}
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" target="_blank" href="https://www.sonede.com.tn/">
+          <img src="/img/sonede1.png" height="36" alt="" loading="lazy"
+            style="margin-top: -3px;" />
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/display_emploi_user" rel="nofollow"
+                >Appel d'embauche</a>
+            </li>
+          
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://www.youtube.com/channel/UCk0JDY4cPvKv1m8Bsnl9qhg" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://www.facebook.com/SONEDE" rel="nofollow" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://twitter.com/sonede_tn?lang=fr" rel="nofollow" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Jumbotron -->
+    <div id="intro" class="p-5 text-center bg-light">
+      <h1 class="mb-3 h2">NOS OFFRES</h1>
+      <h6>Nous recrutons sur des nombreuses fonctions.<br/>Consultez nos offres d'emploi, d'alternance et de stage</h6>
+    
+    </div>
+    <!-- Jumbotron -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="my-5">
+    <div class="container">
+
+
+
+<% if(message){ %>
+   
+ 
+  <div classs="container p-5">
+    <div class="row no-gutters fixed-bottom">
+      <div class="col-lg-2 col-md-30">
+        <div class="alert alert-<%= message.type%> alert-dismissible fade show mt-3" role="alert">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+           <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> ATTENTION!</h4>
+            <p><%= message.message %></p>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <% } %>
+
+      <!--Section: Content-->
+      <section>
+        <div class="row gx-5">
+        
+          <% if( emplois !="" ){ %>
+            <% emplois.forEach(emploi=>{ %>
+
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <!-- News block -->
+            <div>
+              <!-- Featured image -->
+              <div class="bg-image hover-overlay shadow-1-strong ripple mb-4">
+                
+                <a href="/details_emploi_user">
+                  <img name="image" id="image" src="<%= emploi.img %>"  />
+                </a>
+              </div>
+
+              <!-- Article data -->
+              <div class="row mb-3">
+                <div class="col-6">
+                  <a href="" class="text-warning">
+                    <i class="fas fa-code"></i>
+                    <%= emploi.secteur%>
+                  </a>
+                </div>
+
+                <div class="col-6 text-end">
+                  <u> <%= moment(emploi.date_debut).format('L'); %> - <%= moment(emploi.date_fin).format('L'); %></u>
+                </div>
+              </div>
+              
+
+              <!-- Article title and description -->
+           
+                <h5><%= emploi.fonction%></h5>
+
+                <p>
+                 <%= emploi.description%>
+
+                </p>
+
+               
+              
+
+              </div>
+              <div id="header">
+                <div id="header-content">
+             
+                 
+               <a class="button button--secondary button--small button--solid popup1" href="/login" data-id="<%= emploi._id %>">Postuler maintenant</a>
+            
+               <a class="button button--secondary button--small button--solid popup1" href="/details_offre_user/<%= emploi._id %>" data-id="<%= emploi._id %>">Détails</a>
+            
+               
+
+              </div>
+            </div>
+
+            </div>
+            
+
+              <% }) %>
+              <%}else {%>
+                  <h1 class="text-center text-secondary mt-5">No users found in the database !</h1>
+                  <%}%>
+
+                </div>
+              </section>
+      <!--Section: Content-->
+
+
+      
+<script>
+  $(document).ready(function () {
+     $('body').on('click', '.popup1',function(){
+          var pid = $(this).attr('data-id');
+          $("#post_id").val(pid);
+     });
+ });
+ </script>
+
+
+      <!-- Pagination -->
+      <nav class="my-4" aria-label="...">
+        <ul class="pagination pagination-circle justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+ 
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+      <p>Suivez l'actualité de la<b> SONEDE</b> </p>
+      <a href="https://www.youtube.com/channel/UCk0JDY4cPvKv1m8Bsnl9qhg" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/SONEDE" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/sonede_tn?lang=fr" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+     
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      - Rue Jawaharlal Nehru Montfleury 1089 Tunis Chebbi, Tunis.
+		- 71 390 569 / 71 390 369.
+      <a class="text-dark" href="http://www.sonede.com.tn">Sonede.com.tn</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+    <!-- MDB -->
+    <script type="text/javascript" src="/js/display_emploi_user2.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="/js/display_emploi_user.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"></script>
+</body>
+</html>

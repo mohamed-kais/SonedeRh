@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/sonede1.png">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/mark.js/8.6.0/jquery.mark.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- bootstrap sidebar stylesheet -->
+    <link href="/css/bootstrap-sidebar.min.css" rel="stylesheet">
+    
+
+    <title>Les details de l'utilisateur</title>
+
+</head>
+<style>
+
+
+    body{
+    
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+.main-body {
+    padding: 15px;
+}
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.gutters-sm {
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+    background-color: #e2e8f0;
+}
+.h-100 {
+    height: 100%!important;
+}
+.shadow-none {
+    box-shadow: none!important;
+}
+h5{
+  margin-top: 1%;
+  font-family:Trebuchet MS ;
+  font-size: 101%;
+}
+</style>
+<body>
+    
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-dark  navbar-fixed-top">
+          <div class="container-fluid">
+              
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span><span class="logo"> Bienvenue, <%=username%></span>
+              </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/ajouter_emploi"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Ajouter une offre d'emploi</a>
+                </li>
+                <li><a href="/display_archive_emploi"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> ARCHIVE</a>
+                </li>
+                
+                <li><a href="/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+        <!-- Boostrap Sidebar  - Collapsible Menu Items -->
+        <!-- Sidebar -->
+        <div id="bootstrap-sidebar" class="dark-theme text-menu">
+          <ul class="sidebar-nav">
+            <li> <a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <span class="menu-text">Acceuil</span></a>
+            </li>
+            <li> <a href="/display_emploi"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> <span class="menu-text">Offres d'emploi</span></a>
+            </li>
+            <li> <a href="/display_vacant"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> <span class="menu-text">Stage et alternance</span></a>
+            </li>
+            <li class="active"> <a href="/display_users"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="menu-text">Utilisateurs</span></a>
+            </li>
+            
+           
+          
+          </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+    </div>
+       
+
+            <div class="container">
+                <div class="main-body">
+                
+                      <!-- Breadcrumb -->
+                      <nav aria-label="breadcrumb" class="main-breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                          <li class="breadcrumb-item"><a href="/display_users">Utilisateurs</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Profil</li>
+                        </ol>
+                      </nav>
+                      <!-- /Breadcrumb -->
+                
+                      <div class="row gutters-sm">
+                        <div class="col-md-4 mb-3">
+                          <div class="card"style="margin-bottom: 5%;">
+                            <div class="card-body" style="margin-bottom: 3%;">
+                              <div class="d-flex flex-column align-items-center text-center">
+                                <img name="image" id="image" src="/<%=users.img%>" class="rounded-circle" width="150" alt="">
+                
+                                <div class="mt-3">
+                                  <h4><%= users.sexe === "Homme" ? 'Mr.' : 'M.'%><%= users.username%></h4>
+                                  <p class="text-secondary mb-1"><%= moment(users.date_dn).format('L'); %></p>
+                                  <p class="text-muted font-size-sm"><%=users.email%></p>
+                                  <p style="font-size:200%;">SCORE : <%=users.score%></p>
+                                  <a target="_blank" href="/contact_user/<%=users._id%>"><button class="btn btn-primary">Contacter le candidat</button></a>
+                                  
+                                  <a href="/delete_user/<%=users._id%>"><button class="btn btn-danger">Supprimer</button></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <form action="/ajout_ent/<%=users._id%>?_csrf=<%= csrfToken %>" method="POST">                           
+                          <div class="card mt-3">
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="form-group">
+                                  <label>Le candidat a-t-il passé Les tests psychotechniques ?</label>
+                                  <div class="form-control">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="psy_ent" value="Oui" [(ngModel)]="psy_ent" <%if(users.psy_ent === "Oui"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Oui
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="psy_ent" value="Non" [(ngModel)]="psy_ent"<%if(users.psy_ent === "Non"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Non
+                                    </label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="form-group">
+                                  <label>Le candidat s'est présenté à l'heure pour l'entretien ?</label>
+                                  <div class="form-control">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="heure_ent" value="Oui" [(ngModel)]="heure_ent"<%if(users.heure_ent === "Oui"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Oui
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="heure_ent" value="Non" [(ngModel)]="heure_ent"<%if(users.heure_ent === "Non"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Non
+                                    </label>
+                                  </div>
+                                </div>
+                              </li>
+                             
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="form-group">
+                                  <label>État du CV :</label>
+                                  <div class="form-control">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="cv_ent" value="Bon" [(ngModel)]="cv_ent" <%if(users.cv_ent === "Bon"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Bon
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="cv_ent" value="Passable" [(ngModel)]="cv_ent"<%if(users.cv_ent === "Passable"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Passable
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="cv_ent" value="Falsifier" [(ngModel)]="cv_ent" <%if(users.cv_ent === "Falsifier"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Falsifier
+                                    </label>
+                                   
+                                    
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="form-group">
+                                  <label>Lettre de motivation délivrée ?</label>
+                                  <div class="form-control">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="mot_ent" value="Oui" [(ngModel)]="mot_ent"<%if(users.mot_ent === "Oui"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Oui
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="mot_ent" value="Non" [(ngModel)]="mot_ent"<%if(users.mot_ent === "Non"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Non
+                                    </label>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="form-group">
+                                  <label>Copie de la carte d'identité nationale délivrée ?</label>
+                                  <div class="form-control">
+                                    <label class="radio-inline">
+                                      <input type="radio" name="cin_ent" value="Oui" [(ngModel)]="cin_ent"<%if(users.cin_ent === "Oui"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Oui
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="cin_ent" value="Non" [(ngModel)]="cin_ent" <%if(users.cin_ent === "Non"){%>
+                                        <%="checked"%>
+                                    <%}%>>
+                                      Non
+                                    </label>
+                                  </div>
+                                </div>
+                                <button class="btn btn-info " type="submit">Mettre à jour les informations</button>
+                              </li>
+                              
+                            </ul>
+                          </div>
+                        </div>
+                        
+</form>
+
+                        <div class="col-md-8">
+                          <div class="card mb-3">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-sm-3 " style="text-align: center;">
+                                 <h5 class="mb-0">Nom et Prénom :</h5>
+                                </div>
+                                <div class="col-sm-9 text-secondary text-muted">
+                                  <%=users.nom%> <%=users.prenom%>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3 " style="text-align: center;">
+                                 <h5 class="mb-0">Carte d'identité nationale :</h5>
+                                </div>
+                                <div class="col-sm-9 text-secondary text-muted">
+                                  <%=users.cin%>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0">Adresse et domicile :</h5>
+                                </div>
+                                <div class="col-sm-9 text-muted text-secondary">
+                                  <%=users.adresse%> <b>gouvernorat de :</b> <%=users.ville%> 
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Nationalité :</h5>
+                                </div>
+                                <div class="col-sm-9 text-muted text-secondary">
+                                  <%= users.nationalite === "Oui" ? 'Tunisienne' : 'Étranger'%>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Situation matrimoniale :</h5>
+                                </div>
+                                <div class="col-sm-9 text-muted text-secondary">
+                                  <%= users.matrimonial%>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Numéro de téléphone :</h5>
+                                </div>
+                                <div class="col-sm-9 text-muted text-secondary">(+216)<%=users.tel%> <b>/</b> (+216)<%=users.tel_alt%>
+                                </div>
+                              </div>
+                              <hr>
+                            
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Permis de conduire :</h5>
+                                </div>
+                                <div class="col-sm-9  text-muted text-secondary">
+                                  <%=users.type_permis_c%>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Diplôme :</h5>
+                                </div>
+                                <div class="col-sm-9  text-muted text-secondary">
+                                  Obtention d'un  <%=users.diplome%> spécialisé dans <%=users.specialite%>
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Expérience :</h5>
+                                </div>
+                                <div class="col-sm-9  text-muted text-secondary">
+                                  Une durée de <%=users.annee%> Ans comme experience professionnelle
+                                </div>
+                              </div>
+                              <hr>
+                              
+                              <div class="row">
+                                <div class="col-sm-3" style="text-align: center;">
+                                  <h5 class="mb-0" style="">Address :</h5>
+                                </div>
+                                <div class="col-sm-9  text-muted text-secondary">
+                                  Bay Area, San Francisco, CA
+                                </div>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <a class="btn btn-info " href="/download/<%=users._id%>">Télécharger le CV</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+            
+                        </div>
+                      </div>
+            
+                    </div>
+                </div>
+
+         
+     
+        
+   
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/sidebar.js"></script>
+
+</html>
+
+
+
+           

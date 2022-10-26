@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="img/sonede1.png">
+  <title>Nos offres</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="/css/list_postulation.css">
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+.disabled { color : #ddd;}
+.br-icon
+        {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 100;
+            height: 45px;
+            width: 45px;
+            border-radius: 10%;
+            background-color: #e91e63;
+            box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.58);
+            -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+            -webkit-transform: scale(0.92);
+                      transform: scale(0.92);
+        }
+        
+        .br-icon2
+        {
+            position: fixed;
+            bottom: 10px;
+            right: 60px;
+            z-index: 100;
+            height: 45px;
+            width: 45px;
+           border-radius: 10%;
+            background-color: #e91e63;
+            box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.58);
+            -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+            -webkit-transform: scale(0.92);
+                      transform: scale(0.92);
+        }
+
+        .hide{
+  display: none;
+}
+</style>
+</head>
+<body>
+
+    <% if(message){ %>
+   
+ 
+        <div classs="container p-5">
+          <div class="row no-gutters fixed-bottom">
+            <div class="col-lg-2 col-md-30">
+              <div class="alert alert-<%= message.type%> alert-dismissible fade show mt-3" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                  </button>
+                 <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> ATTENTION!</h4>
+                  <p><%= message.message %></p>
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
+        <% } %>
+<!-- partial:index.partial.html -->
+<div class="container-wrapper">
+  
+
+		<div class="container-fluid">
+			<div class="heading clearfix">
+			<div class="pull-left">
+				<h4><i class="fa fa-empire"></i> &nbsp; Consultez nos offres d'emploi, d'alternance et de stage !</h4>
+				</div>	
+				<div class="pull-right">
+					<span><a href="/logout"><i class="fa fa-arrow-left"></i> &nbsp; Déconnexion</a></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-md-3">
+					<div class="left-panel">
+						<div class="info-panel">
+							<div class="personal-sec">
+								<div class="name">
+									<h3 class="margin0"><%=username%></h3>
+									<h5 class="margint5"><%=diplome%></h5>
+								</div>
+								<div class="contact-info">
+									<div><i class="fa fa-envelope"></i> <span><%=email%></span></div>
+									<div><i class="fa fa-phone"></i> <span>+216 <%=tel%></span></div>
+									<div><i class="fa fa-map-marker"></i> <span><%=adresse%></span></div>
+								</div>
+							</div>
+							<div class="personal-sec sec-footer clearfix">
+								<ul class="lead-score">
+									<li>
+										<div class="score"><a href="https://www.facebook.com/SONEDE" target="_blank"><i class="fa fa-facebook-official" style="font-size: 1.73em;" ></i></a></div>
+										
+									</li>
+									<li>
+										<div class="score"><a href="https://twitter.com/sonede_tn?lang=fr" target="_blank"><i class="fa fa-twitter-square" style="font-size: 1.73em;padding-bottom: 10px;"  aria-hidden="true"></i></a></div>
+										
+									</li>
+									<li>
+										<div class="score"><a href="https://www.youtube.com/channel/UCk0JDY4cPvKv1m8Bsnl9qhg" target="_blank"><i class="fa fa-youtube-play" style="font-size: 1.73em;" aria-hidden="true"></i></a></div>
+										
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="menu-panel margint20 marginb15">
+							<ul class="menu">
+								<li class="active"><a data-toggle="tab" href="#activity-history">Offre d'emploi</a></li>
+								
+								<li><a data-toggle="tab" class="" href="#social-profile">Offre de stage</a></li>
+							
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8 col-md-9">
+					<div class="right-panel">
+						
+						<h4><strong>Moteur de recherche / recherche avancée</strong></h4>
+						<div class="well clearfix form-inline">
+							<div class="pull-left">
+								<span class="well-content form-group">
+							    <label for="email">Secteur: </label>
+							    <input type="text" class="form-control" id="input">
+								</span>
+								<span class="well-content form-group">
+							    <label for="email">Du: </label>
+							    <input type="date" class="form-control">
+								</span>
+                                <span class="well-content form-group">
+                                    <label for="email">Jusqu'au: </label>
+                                    <input type="date" class="form-control">
+                                    </span>
+							</div>
+						</div>
+                       
+
+
+						<div class="tab-content">
+							<div id="activity-history" class="tab-pane fade in active">
+                <ul class="timeline">
+                                <% if( emplois !="" ){ %>
+                                    <% emplois.forEach(emploi=>{ %> 
+                                    
+								
+								  <li class="timeline-event">
+								    <label class="timeline-event-icon"></label>
+								    <div class="timeline-event-copy">
+								      <p class="timeline-event-thumbnail"><%= moment(emploi.date_debut).format('L'); %></p>
+								     	<div class="history-row">
+									      <div class="time">
+                                           
+                                            <% if (emploi.disponibilite === 'disponible') { %>
+                                            <img src="img/open_icon.png" alt="Open" >
+                                            <%} else { %>
+                                           <img src="img/closed_icon.png" alt="Closed">
+                                            <% } %>
+                                        
+                                        </div>
+  
+									      <p><strong><%= emploi.fonction%> - </strong><span class="secteur1" style="color:#a4c3ca ;"><%= emploi.secteur%></span><br><%= emploi.description%></p>
+									     
+                                         
+                                          <% if (emploi.disponibilite === 'disponible') { %>
+                                            <p><a class="button button--secondary button--small button--solid popup1" data-toggle="modal" data-target="#myModal" data-id="<%= emploi._id %>">Postuler maintenant</a>
+                                            </p>
+                                            <%} else { %>
+                                                <p class="disabled">Postuler maintenant</p>
+                                            <% } %>
+
+                                          
+                                         
+                                        
+                                         <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Confirmer votre postulation !</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <p>Veuillez prouver que vous n'êtes pas un robot.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form action="/postulation/<%= emploi._id %>?_csrf=<%= csrfToken %>" method="POST" id="post_recap">
+                                                        <input type="hidden" id="post_id" name="post_id" value="">
+                                                        <div class="g-recaptcha" data-sitekey="6LdGvRccAAAAAE5ZeV7aCFxHZ4MAQdPFcK5iPoxQ"></div>
+                                                        <button class="button button--secondary button--small button--solid">Postuler</button>
+                                                </form>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                          </div>
+								    </div>
+								  </li>
+								
+								
+                                
+                                <% }) %>
+                                <%}else {%>
+                                    <h1 class="text-center text-secondary mt-5">No users found in the database !</h1>
+                                    <%}%>
+                                  </ul> 
+							</div>
+ 
+							<div id="social-profile" class="tab-pane fade">
+                                <% if( vacants !="" ){ %>
+                                    <% vacants.forEach(vacant=>{ %>
+                                <form action="/postulation/<%= vacant._id %>?_csrf=<%= csrfToken %>" method="POST" id="post_recap_vacant">
+                                    <input type="hidden" id="post_id" name="post_id" value="">
+                                    
+								<ul class="timeline">
+								  <li class="timeline-event">
+								    <label class="timeline-event-icon"></label>
+								    <div class="timeline-event-copy">
+								      <p class="timeline-event-thumbnail">Durée : <%=vacant.date_debut %></p>
+								     	<div class="history-row">
+									      <div class="time"><% if (vacant.disponibilite === 'disponible') { %>
+                                            <td><img src="img/open_icon.png" alt="Open" ></td>
+                                            <%} else { %>
+                                            <td><img src="img/closed_icon.png" alt="Closed"></td>
+                                            <% } %></div>
+									      <p><strong><%= vacant.sujet%></strong><br><%= vacant.secteur%><br><%= vacant.type_stage%></p>
+                                          <p> <a class="button button--secondary button--small button--solid popup1" href="#popup1" data-id="<%= vacant._id %>">Postuler maintenant</a>
+                                          
+                                        </p>
+                                        </div>
+								    </div>
+								  </li>
+								
+								
+								 
+								</ul> 
+                                </form>
+
+                                
+                                <% }) %>
+                                <%}else {%>
+                                    <h1 class="text-center text-secondary mt-5">No users found in the database !</h1>
+                                    <%}%>
+							
+							</div>
+							
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Activity modal -->
+	<div id="myModal" class="modal modal-dialog-centered fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Activity</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p class="clearfix">
+						 <form class="form-horizontal">
+						  <div class="form-group">
+						    <label class="control-label col-sm-3" for="email">Activity type:</label>
+						    <div class="col-sm-9">
+						      <input type="input" class="form-control" id="" placeholder="Activity type">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label class="control-label col-sm-3" for="pwd">Activity Date:</label>
+						    <div class="col-sm-9">
+						      <input type="date" class="form-control" id="" placeholder="choose date">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label class="control-label col-sm-3" for="pwd">Notes:</label>
+						    <div class="col-sm-9">
+									<textarea class="form-control" rows="5" id="comment"></textarea>
+						    </div>
+						  </div>
+						</form> 
+	        </p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary">Add</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<script type="text/javascript" src="/js/display_emploi_user.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<div class="br-icon"><a href="/display_emploi_user"><span style="position: absolute; top: 50%;left: 50%;
+    -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);color: rgb(0, 0, 0);
+    font-size: 20px;font-weight: 600;" 
+    class="fa fa-th"></span></a></div>
+
+<div class="br-icon2"><a href="/display_list_postulation"><span style="position: absolute; top: 50%;left: 50%;
+    -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);color: rgb(0, 0, 0);
+    font-size: 20px;font-weight: 600;" 
+    class="fa fa-list"></span></a></div>
+
+
+    <script>
+        $(document).ready(function () {
+           $('body').on('click', '.popup1',function(){
+                var pid = $(this).attr('data-id');
+                $("#post_id").val(pid);
+           });
+       });
+
+     
+       </script>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"></script>
+
+
+</body>
+</html>

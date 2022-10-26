@@ -1,0 +1,2 @@
+id client : 646255978840-27ttc6q577dt7gshqo5h604m4v5mmtc2.apps.googleusercontent.com
+secret client codde : TvX08ttfNJMWAXrsh3JLZYbS

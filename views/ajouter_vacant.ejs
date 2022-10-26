@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Ajout des Offres</title>
+  <link rel="shortcut icon" href="img/sonede1.png">
+  
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.0/css/bootstrapValidator.css'>
+
+<link href="/css/bootstrap-sidebar.min.css" rel="stylesheet">
+
+<link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+
+<link href="/css/ajout_vacant.css" rel="stylesheet" media="all">
+<!--  html { overflow-y: hidden; } -->
+
+<style>
+    html { overflow-y: hidden; }
+</style>
+</head>
+<body>
+
+
+
+  
+
+    <div id="wrapper" class="toggled">
+      <!-- Navigation -->
+      <nav class="navbar navbar-dark  navbar-fixed-top">
+        <div class="container-fluid">
+            
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="
+              glyphicon glyphicon-th-large" aria-hidden="true"></span><span class="logo"> Bienvenue, <%=username%></span>
+            </a>
+          </div>  
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              
+              <li><a href="/display_archive_emploi"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> ARCHIVE</a>
+              </li>
+              
+              <li><a href="/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+      <!-- Boostrap Sidebar  - Collapsible Menu Items -->
+      <!-- Sidebar -->
+      <div id="bootstrap-sidebar" class="dark-theme text-menu">
+        <ul class="sidebar-nav">
+            <li></li>
+          <li></li>
+        <li></li>
+          <li> <a href="/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <span class="menu-text">Acceuil</span></a>
+          </li>
+          <li> <a href="/display_emploi"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> <span class="menu-text">Offres d'emploi</span></a>
+          </li>
+          <li class="active"> <a href="/display_vacant"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> <span class="menu-text">Stage et alternance</span></a>
+          </li>
+          <li> <a href="/display_users"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="menu-text">Utilisateurs</span></a>
+          </li>
+
+          
+        </ul>
+      </div>     
+</div>
+    
+
+<div style="margin-top: 3%;" class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Ajouter une offre pour un stage</h2>
+            </div>
+            <div class="card-body">
+                <form action="/ajouter_vacant?_csrf=<%= csrfToken %>" method="POST" id="ajouter_vacant" name="ajouter_vacant">
+
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" >Intitulé de stage: <b style="color:red">*</b></label> 
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign"></i></span>
+                      <input  style="width: 210%;" name="sujet" placeholder="Saisissez le sujet du stage" id="sujet" class="form-control"  type="text">
+                      
+                    </div>
+                      </div>
+                    </div>
+                   
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" >Nom de l'encadreur: <b style="color:red">*</b></label> 
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input style="width: 210%;"   name="encadreur" placeholder="Saisissez le nom de l'encadreur" id="encadreur" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div  class="form-group"> 
+                      <label class="col-md-4 control-label">Type de stage  : <b style="color:red">*</b></label>
+                        <div style="padding-left: 2.5%;" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></span>
+                        <select style="width: 118%;" name="type_stage" class="form-control selectpicker" id="type_stage">
+                          <option value=" " >Sélectionner le type de stage&nbsp&nbsp</option>
+                          <option>payant</option>
+                          <option>non payant</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                      </div>
+                    </div>
+
+                   
+
+
+                    <div class="form-group" > 
+                      <label class="col-md-4 control-label">Durée de stage : <b style="color:red">*</b></label>
+                        <div class="input-group" style="padding-left: 2.5%;">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <select style="width:112% ;" name="date_debut" class="form-control selectpicker" id="dd">
+                          <option value=" " >Sélectionner la durée du stage</option>
+                          <option>1 mois</option>
+                          <option>3 mois</option>
+                          <option>6 mois</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                      </div>
+                    </div>
+
+                  
+
+
+                    <div class="form-group" > 
+                      <label class="col-md-4 control-label">Secteur : <b style="color:red">*</b></label>
+                        <div class="input-group" style="padding-left: 2.5%;">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                        <select style="width:112% ;" name="secteur" class="form-control selectpicker" id="secteur">
+                          <option value=" " >Sélectionner le secteur de l'offre</option>
+                          <option>Agroalimentaire</option>
+                          <option>Bâtiment, Travaux Publics</option>
+                          <option>Commerce, Distribution</option>
+                          <option>Fonction Publique</option>
+                          <option>Informatique</option>
+                          <option>Metallurgie</option>
+                          <option>Ressources Humaines</option>
+                          <option>Transport-Logistique</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                      </div>
+                    </div>
+
+
+                    <div>
+                        <button class="btn btn--radius-2 btn--red " type="submit">Ajouter <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- /.container -->
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.0/js/bootstrapValidator.min.js'></script>
+
+
+<script src="/js/sidebar.js"></script>
+<script  src="./js/form_vacant.js"></script>
+
+<script src="/js/global.js"></script>
+</body>
+</html>
+
+

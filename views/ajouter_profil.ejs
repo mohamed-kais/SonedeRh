@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="shortcut icon" href="img/sonede1.png">
+<title>Ajouter votre profil</title>
+<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">  
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css'>        
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />          
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<style>
+ * {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
+
+p {
+    color: grey
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #673AB7;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+
+#msform select,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #673AB7;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #673AB7;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #311B92
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #673AB7;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: #673AB7;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #673AB7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 16.6%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #upload:before {
+    font-family: FontAwesome;
+    content: "\f0ee"
+}
+
+#progressbar #question:before {
+    font-family: FontAwesome;
+    content: "\f059"
+}
+#progressbar #job:before {
+    font-family: FontAwesome;
+    content: "\f0b1"
+}
+#progressbar #place:before {
+    font-family: FontAwesome;
+    content: "\f041"
+}
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #673AB7
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: #673AB7
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+#radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+    
+    text-align:right;float:left;
+}
+.newforce{
+    margin-left: 20%;
+}
+.newlabel::after{
+    content: ' ' attr(data-domain);
+    position: absolute;
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+    top: 30%;
+    left: 75%;
+    
+}
+.newlabel{
+    position: relative;
+    display: block;
+    padding-right: 76px;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+</style>
+</head>
+<body oncontextmenu='return false' class='snippet-body'>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2 id="heading">Inscrivez votre compte d'utilisateur</h2>
+                <p>Remplissez tous les champs du formulaire pour passer à l'étape suivante
+                </p>
+                <form id="msform" action="/ajouter_profil?_csrf=<%= csrfToken %>" method="POST" enctype="multipart/form-data" name="msform">
+                    <% if(typeof err !='undefined' ){ %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong><i class="fas fa-exclamation-triangle"></i> ATTENTION ! </strong>
+                            <%= err %>.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <% } %>
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active" id="personal"><strong>Informations personnelles</strong></li>
+                        <li id="place"><strong>Coordonnées</strong></li>
+                        <li id="job"><strong>Cursus professionnel</strong></li>
+                        <li id="question"><strong>Questions complementaires</strong></li>
+                        <li id="upload"><strong>Téléchargement</strong></li>
+                        <li id="confirm"><strong>Terminer</strong></li>
+                    </ul>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div> <br> <!-- fieldsets -->
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Informations personnelles</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Étape 1 - 6</h2>
+                                </div>
+                            </div> <label class="fieldlabels">Prénom: <b style="color:red">*</b></label> <input type="text" name="prenom" placeholder="Votre prénom" /> 
+                            <label class="fieldlabels">Nom de famille: <b style="color:red">*</b></label> <input type="text" name="nom" placeholder="Votre nom de famille" /> 
+                            <label class="fieldlabels">Date de naissance: <b style="color:red">*</b></label> <input type="date" name="date_nc" placeholder="Votre date de naissance" />
+                            <label class="fieldlabels">Situation matrimoniale: <b style="color:red">*</b></label>
+                             <select name="matrimoniale" class="form-control selectpicker" id="matrimoniale">
+                                <option value="">Veuillez sélectionner votre situation matrimoniale</option>
+                                <option>Célibataire</option>
+                                <option>Mariée</option>
+                              </select>
+                              <label class="fieldlabels">Sexe: <b style="color:red">*</b></label>
+                              
+                              <input type="radio" name="sexe" value="Homme" id="choix_h" style="width: 15%;margin-top: 5%;"/> Homme
+                              <input type="radio" name="sexe" value="Femme" id="choix_f" style="width: 15%;"/> Femme
+                            
+                        </div> <input type="button" name="next" class="next action-button" value="Suivant" /> 
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Coordonnées:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Étape 2 - 6</h2>
+                                </div>
+                            </div> 
+                            
+                            <label class="fieldlabels">Ville: <b style="color:red">*</b></label> <input type="text" name="ville" placeholder="Votre gouvernorat "/> <label class="fieldlabels">Adresse: <b style="color:red">*</b></label> <input type="text" name="adresse" placeholder="Votre adresse de résidence"/> 
+                            <label class="fieldlabels">Numéro de téléphone: <b style="color:red">*</b></label> <input type="text" name="tel" placeholder="ex. (+216) 12 345 678"/>
+                            <label class="fieldlabels">Numéro de téléphone alternatif: </label> <input type="text" name="alt_tel" placeholder="ex. (+216) 12 345 678" />
+                       
+                        </div> <input type="button" name="next" class="next action-button" value="Suivant" /> <input type="button" name="previous" class="previous action-button-previous" value="Précédent" />
+                    </fieldset>
+                    
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Cursus professionnel:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Étape 3 - 6</h2>
+                                </div>
+                            </div> 
+                            <label class="fieldlabels">Catégorie du permis de conduire:</label>
+                            <select name="type_permis_c" class="form-control selectpicker" id="type_permis_c">
+                                <option>Je n'ai pas le permis de conduire</option>
+                                <option>A1</option>
+                                <option>A et A1</option>
+                                <option>B,A1 et H</option>
+                                <option>C</option>
+                                <option>C,C+E</option>
+                                <option>D et D1</option>
+                                <option>C,C+E,D1 et D+E</option>
+                                <option>B+E</option>
+                                <option>B</option>
+                                <option>D1</option>
+                              
+                            </select> 
+                            <label class="fieldlabels">Diplôme: <b style="color:red">*</b></label> 
+                            <select name="diplome" class="form-control selectpicker" id="priorite">
+                                <option value="">Veuillez sélectionner votre dernier diplôme obtenu</option>
+                                <option>Je n'ai pas eu de diplôme</option>
+                                <option>Baccalauréat</option>
+                                <option>BTP / BTS</option>
+                                <option>License appliquée</option>
+                                <option>License fondamentale</option>
+                                <option>Master professionnel</option>
+                                <option>Master de recherche</option>
+                                <option>Diplôme National d'Ingénieur</option>
+                            </select> 
+                            <label class="fieldlabels">Spécialité: <b style="color:red">*</b></label> 
+                            <input type="text" name="spec" placeholder="ex. Master en ressources humaines" /> 
+
+                            <label class="fieldlabels">Année d'expérience professionnelle: <b style="color:red">*</b></label>
+                            <label class="newlabel" data-domain="Année(s)"> 
+                                <input style=" position: relative;
+                                display: block;
+                                padding-right: 76px;
+                                width: 170px;
+                                box-sizing: border-box;" type="text" name="annee" placeholder="ex. 2" /></label>
+
+                              
+                        </div> <input type="button" name="next" class="next action-button" value="Suivant" /> <input type="button" name="previous" class="previous action-button-previous" value="Précédent" />
+                    </fieldset>
+                    
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Questions complementaires:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Étape 4 - 6</h2>
+                                </div>
+                            </div> 
+                            <div class="newforce">
+                            <div style="display:flex; flex-direction: row; justify-content: center; align-items: right;">
+                            <label class="fieldlabels">Possédez-vous la nationalité tunisienne ?&nbsp;&nbsp; </label>   
+                            <div class="col-sm-7 col-md-7">
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                            <a id="choix_no"  class="btn btn-primary btn-sm active" data-toggle="nationalite" data-title="Oui">Oui</a>
+                            <a id="choix_nn" class="btn btn-primary btn-sm notActive" data-toggle="nationalite" data-title="Non">Non</a>
+                            <input type="hidden" name="nationalite" id="nationalite" value="Oui">    
+                        </div>
+                                </div>
+                                    </div>
+                        </div>
+                        
+                        
+                               
+                                 
+                              
+                                   
+                            
+                       
+                        <div style="display:flex; flex-direction: row; justify-content: center; align-items: right;">
+                            <label class="fieldlabels">Avez-vous déjà travaillé dans la fonction publique ? </label>  
+                            <div class="col-sm-7 col-md-7">
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                            <a name="publique" id="choix_no"  class="btn btn-primary btn-sm active" data-toggle="publique" data-title="Oui">Oui</a>
+                            <a name="publique" id="choix_nn" class="btn btn-primary btn-sm notActive" data-toggle="publique" data-title="Non">Non</a>
+                            <input type="hidden" name="publique" id="publique" value="Oui">
+                        </div>
+                                </div>
+                                    </div>
+                        </div>
+                        <div style="display:flex; flex-direction: row; justify-content: center; align-items: right;">
+                            <label class="fieldlabels">Disposez-vous d'un brevet de secourisme (BNS) ?</label> 
+                            <div class="col-sm-7 col-md-7">
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                            <a name="bns" id="choix_no"  class="btn btn-primary btn-sm active" data-toggle="bns" data-title="Oui">Oui</a>
+                            <a name="bns" id="choix_nn" class="btn btn-primary btn-sm notActive" data-toggle="bns" data-title="Non">Non</a>
+                            <input type="hidden" name="bns" id="bns" value="Oui">
+                        </div>
+                                </div>
+                                    </div>
+                        </div>   
+                        <div style="display:flex; flex-direction: row; justify-content: center; align-items: right;">
+                            <label class="fieldlabels">Avez-vous déjà été condamné par la justice ? </label>  
+                            <div class="col-sm-7 col-md-7">
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                            <a name="justice" id="choix_no"  class="btn btn-primary btn-sm active" data-toggle="justice" data-title="Oui">Oui</a>
+                            <a name="justice" id="choix_nn" class="btn btn-primary btn-sm notActive" data-toggle="justice" data-title="Non">Non</a>
+                            <input type="hidden" name="justice" id="justice" value="Oui">    
+                        </div>
+                                </div>
+                                    </div>
+                        </div>      
+                    </div>
+                        </div> <input type="button" name="next" class="next action-button" value="Suivant" /><input type="button" name="previous" class="previous action-button-previous" value="Précédent" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Télécharger vos fichiers:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Étape 5 - 6</h2>
+                                </div>
+                            </div> <label class="fieldlabels">Envoyer votre lettre de motivation :</label> <input type="file" name="motiv"> <label class="fieldlabels">Envoyer votre CV :</label> <input type="file" name="cv">
+                        </div> <input type="button" name="next" class="next action-button" value="Suivant" /> <input type="button" name="previous" class="previous action-button-previous" value="Précédent" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title">Terminer:</h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps">Étape 6 - 6</h2>
+                                </div>
+                            </div> <br><br>
+                            <h2 class="purple-text text-center"><strong>SUCCÈS !</strong></h2> <br>
+                            <div class="row justify-content-center">
+                                <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                            </div> <br><br>
+                            <div class="row justify-content-center">
+                                <div class="col-7 text-center">
+                                    <h5 class="purple-text text-center">Vous avez complété votre profil avec succès</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" name="next" class="next action-button" value="Envoyer"  onsubmit="return validateForm()"/> <input type="button" name="previous" class="previous action-button-previous" value="Précédent" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+                                <script type='text/javascript'>$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+var current = 1;
+var steps = $("fieldset").length;
+
+setProgressBar(current);
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(++current);
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 500
+});
+setProgressBar(--current);
+});
+
+function setProgressBar(curStep){
+var percent = parseFloat(100 / steps) * curStep;
+percent = percent.toFixed();
+$(".progress-bar")
+.css("width",percent+"%")
+}
+
+$(".submit").click(function(){
+return false;
+})
+
+});
+
+$('#radioBtn a').on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+    
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+})
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"></script>
+
+</body>
+</html>

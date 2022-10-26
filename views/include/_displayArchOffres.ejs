@@ -1,0 +1,17 @@
+
+<% emplois.forEach((row, index)=> { %>
+
+    <tr class="align-middle">
+    
+        <td><%= row.fonction %></td>
+        <td><%= row.recruteur %></td>
+        <td><%= row.contrat %></td>
+        <td><%= moment(row.date_debut).format('L'); %></td>
+        <td><%= row.secteur %></td>
+        
+        <td><%= row.paiment %></td>
+        
+        
+    </tr>
+    <% }) %>
+    

@@ -1,0 +1,20 @@
+
+<% for(var i = 0; i < users.length; i++) { %>
+    
+    <tr class="listitem">
+        <td><%= users[i].fullName %></td>
+        <td><%= users[i].cin %></td>
+        <td><%= users[i].email %></td>
+   
+      
+        <td>
+   
+        <a title="Supprimer l'utilisateur" class="btn border-shadow delete" data-id="<%= users[i]._id%>">
+            <span  class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    
+        </td>
+    </tr>
+    
+    
+    <% } %>

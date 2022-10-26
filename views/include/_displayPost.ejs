@@ -1,0 +1,42 @@
+<% emplois.postulations.forEach((row, index)=> { %>
+
+    <tr class="align-middle">
+        
+        <td><img name="image" id="image" src="/<%= row.img %>" style=" text-align: center;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            margin: 1px auto;
+            position: relative;
+            border: 1px solid rgb(106, 26, 255);
+            border-radius: 6px;" class="img-thumbnail"/></td>
+            <td><a href="/details_user/<%= row._id %>"><%= row.nom %> <%= row.prenom %></a></td>
+        <td><%= row.cin %></td>
+        <td><%= row.diplome %></td>
+        <td><%= row.score %></td>
+        <td><%= row.status_post %></td>
+        
+        <td>
+            
+           
+            <%if (row.status_post ==="en attente") { %>
+                <a href="/accept_mail/<%= row._id %>" class="btn btn-primary active" id="one" data-disabledtext="pré-acceptation envoyer !"><i class="fas fa-check-circle fa-lg mx-1"></i> Accepter</a>
+         
+                
+                <%} else{ %>
+                    <a href="/accept_mail/<%= row._id %>" class="btn btn-primary disabled" id="one"><i class="fas fa-check-circle fa-lg mx-1"></i> Accepter</a>
+         
+                <% } %>
+        
+          <a href="/refuse_mail/<%= emplois._id %>/post/<%= row._id %>" class="btn btn-danger"><i class="fas fa-times-circle fa-lg mx-1"></i> Refuser</a>
+          <a href="/en_attente/<%= row._id %>" class="btn btn-warning"><i class="fas fa-file-alt"></i> Mettre à la liste d'attente</a></td>
+         
+         
+    </tr>
+
+    <% }) %>
+   

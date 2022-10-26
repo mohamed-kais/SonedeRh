@@ -1,0 +1,76 @@
+<%-include('include/_header')%>
+
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/index"><i class="fas fa-angle-double-left"></i> Tout les offres d'embauche</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Mettre à jour une offre d'embauche</h2>
+            <span class="text-light">Utiliser le formulaire Ci-dessous pour une Mise à jour</span>
+        </div>
+        
+        <form method="POST" id="maj_offre">
+            <div class="new1">
+                <div class="form-group">
+                    <label for="priorite" class="text-dark">Priorite</label>
+                   
+                    <input type="text" name="priorite" value="<%= offres.priorite %>" placeholder="Priorite de l'offre d'embauche">
+                </div>
+
+                <div class="form-group">
+                    <label for="recrutement" class="text-dark">Titre de L'emploi</label>
+                    
+                    <input type="text" name="titre" value="<%= offres.titre %>" placeholder="Description du recrutement">
+                    
+                </div>
+
+                 <div class="form-group">
+                    <label for="date_debut" class="text-dark">Date de Lancement</label>
+                    <input type="date"  name="date_debut" value="<%= offres.date_debut %>">
+
+                <div class="form-group">
+                    <label for="date_fin" class="text-dark">Date de Clôture</label>
+                    <input type="date"  name="date_fin" value="<%= offres.date_fin %>">
+                </div> 
+
+                <div class="form-group">
+                    <label for="Recruteur" class="text-dark">Nom du Recruteur</label>
+                   
+                    <input type="text" name="recruteur" value="<%= offres.recruteur %>" placeholder="Insérer votre nom ici">  
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="district" class="text-dark">Emplacement et Lieu</label>
+                    
+                    <input type="text" name="district" value="<%= offres.district %>" placeholder="Insérer le district visée">  
+                </div> -->
+<!--                 
+                <div class="form-group">
+                    <label for="description" class="text-dark">Description de l'emploi  :</label>
+                    <textarea id="description" name="description" rows="4" cols="95%" placeholder="Insérer votre description de l'emploi ici ..."><%= offres.description %></textarea>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="status" class="text-dark">Status</label>
+                    <div class="inline">
+                        <input type="radio" name="status" value="Ouvert" <%= offres.status == 'Ouvert' ? 'checked' : '' %>>
+                        <label for="status" class="text-dark">Ouvert</label>
+                    </div>
+                    <div class="inline">
+                        <input type="radio" name="status" value="Fermer" <%= offres.status == 'Fermer' ? 'checked' : '' %>>
+                        <label for="status" class="text-dark">Fermer</label>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update"><b>Mettre a jour votre offre</b></button>
+                </div>
+            </div> 
+        </form>
+ 
+    </div>
+
+</main>
+<%-include('include/_footer')%>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>W3Docs - Learn Programming Languages Online.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="kais" content="sonederh">
+    <style>
+        #livesearch{
+        background-color: gainsboro;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        width: 170px;
+        }
+        .hide{
+          display: none;
+        }
+        
+        a:link,a:hover,a:visited,a:active{
+          color: black;
+        }
+        </style>
+<link rel="stylesheet" href=""/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <h1>search test</h1>
+    <form action="">
+<input type="text" size="30" onkeyup="showResults(this.value)" />
+<div id="livesearch">this</div>
+    </form>
+
+  <script> 
+let search = $("#livesearch");
+
+function showResults(str){
+    if (str.length === 0) {
+ search.addClass("hide");       
+    } else {
+        search.removeClass("hide");
+    }
+
+    $.ajax({
+        url: "/",
+        contentType: "application/json",
+        method : "POST",
+        data: JSON.stringify({query: str}),
+        success: function(result){
+search.html(result.response);
+        }
+    })
+}
+
+</script>  
+</body>
+</html>

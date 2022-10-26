@@ -1,0 +1,392 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+
+    
+
+    
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url('../img/sonede3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+h1 {
+	font-weight: bold;
+	margin: 0;
+    padding-bottom: 3%;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+span {
+	font-size: 12px;
+}
+
+a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+  
+}
+
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width:50%;
+	max-width: 100%;
+	min-height: 66%;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: #6a41ff;
+	background: -webkit-linear-gradient(to right, #6a41ff, #6a41ff);
+	background: linear-gradient(to right, #2339ff, #8894fd);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+
+.user {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border:2px solid #FFFFFF;
+  box-shadow: 0 0 8px 3px #B8B8B8;
+  position:relative;
+  
+  
+}
+.newuser{
+    padding-bottom: 3%;
+}
+
+.user img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+span.icon {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  background:#e2e2e2;
+  border-radius:100%;
+  width:30px;
+  height:30px;
+  line-height:30px;
+  vertical-align:middle;
+  text-align:center;
+  color:#0000ff;
+  font-size:14px;
+  cursor:pointer;
+}
+ .newbutton{
+    padding-top: 3%;
+} 
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+
+.upload-button {
+  font-size:150%;
+  padding-top: 15%;
+}
+.file-upload {
+    display: none;
+}
+
+</style>
+
+<script>
+$(document).ready(function() {
+
+    
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.main-profile-img').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+
+    $(".upload-button").on('click', function() {
+    $(".file-upload").click();
+    });
+});
+
+</script>
+
+<h2></h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Créer votre compte</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>Ou bien utiliser votre CIN pour s'authentifier</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>S'inscrire</button>
+		</form>
+	</div>
+
+
+
+	<div class="overlay-container">
+        <%- include ("include/_messages") %>
+        <form action="/api/register" method="POST" id="ajouter_user">
+			<h1>Créer votre compte</h1>
+
+
+
+         <div class="newuser">
+            <div class="user">
+                <img src="https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png" class="main-profile-img" />
+             
+                <span class="icon"> <i class="fa fa-camera upload-button"></i></span>
+                <input class="file-upload" type="file" accept="image/*"/>
+            </div>
+            
+
+           
+        </div> 
+ 
+
+			<input type="text" placeholder="Entrez votre nom et prénom" name="fullName" value="<%= typeof fullName != 'undefined' ? fullName : '' %>"/>
+			<input type="email"  placeholder="Entrez votre adresse e-mail" name="email" value="<%= typeof email != 'undefined' ? email : '' %>"/>
+			<input type="text"  placeholder="Entrez votre numéro de la CIN " name="cin" maxlength="8" value="<%= typeof cin != 'undefined' ? cin : '' %>"/>
+            <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" value="<%= typeof password != 'undefined' ? password : '' %>"/>
+            <input type="password" name="password2" id="password2" placeholder="Veuillez confirmer votre mot de passe" value="<%= typeof password2 != 'undefined' ? password2 : '' %>"/>
+			<div class="newbutton">
+            <button type="submit">S'inscrire</button>
+        </div>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+				<h1>Bienvenue, au portail RH!</h1>
+				<p>Si vous avez déjà un compte, identifiez-vous et décrocher l'emploi idéal</p>
+                
+                    <button onclick="window.location.href='/'" class="ghost" id="signUp">Se connecter</button>
+
+                
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div>
+
+
+</div>
+<%-include('include/_footer3')%>

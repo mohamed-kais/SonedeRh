@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONEDE RH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <a href="/" class="nav-brand text-dark">Systeme de recrutement </a>
+                    </div>
+                </div>
+        </nav>
+    </header>
+
+
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> Tout les offres d'embauche</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Ajouter une offre d'embauche</h2>
+                <span class="text-light">Utiliser le formulaire Ci-dessous</span>
+            </div>
+
+            <form method="POST" id="maj_offre">
+                <div class="Ajouter_offre">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" placeholder="Mark Stoenis">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="text-light">Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" placeholder="Mark Stoenis">
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender" class="text-light">Gender</label>
+                        <div class="inline">
+                            <input type="radio" name="gender" value="Male">
+                            <label for="gender" class="text-light">Male</label>
+                        </div>
+                        <div class="inline">
+                            <input type="radio" name="gender" value="Female">
+                            <label for="gender" class="text-light">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update"><b>Confirmer votre offre</b></button>
+                    </div>
+                </div> 
+            </form>
+        </div>
+
+    </main>
+    
+</body>
+</html>

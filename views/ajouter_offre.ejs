@@ -1,0 +1,139 @@
+<%-include('include/_header3')%>
+
+<style>
+    body {
+	background-color: #9b59b6;
+	font-family: 'Open Sans', sans-serif;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+    
+}
+
+.container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 90%;
+	max-width: 80%;
+}
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
+}
+
+.header h2 {
+	margin: 0;
+}
+.header span {
+	color: #000;
+}
+
+.Ajouter_offre {
+	padding: 30px 40px;	
+}
+.form-group {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+.form-group label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.form-group input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+.form-group select{
+    width: 100%;
+    border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+}
+.form-group input:focus {
+	outline: 0;
+	border-color: #777;
+}
+.form-group.success input {
+	border-color: #2ecc71;
+}
+.form-group.error input {
+	border-color: #e74c3c;
+}
+.form-group i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+.form-group.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-group.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+.form-group small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-group.error small {
+	visibility: visible;
+}
+
+.Ajouter_offre button {
+	background-color: #8e44ad;
+	border: 2px solid #8e44ad;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+</style>
+
+<div class="container">
+
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/index"><i class="fas fa-angle-double-left"></i> Tout les offres d'embauche</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <div class="header">
+            <h2 class="text-dark">Ajouter une offre d'embauche</h2>
+            <span>Utiliser le formulaire Ci-dessous</span>
+        </div>
+        </div>
+        <%-include('include/_form')%>
+    </div>
+
+</main>
+</div>
+<%-include('include/_footer')%>

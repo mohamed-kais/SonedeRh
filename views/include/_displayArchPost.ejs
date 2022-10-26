@@ -1,0 +1,17 @@
+<% users.forEach((row, index)=> { %>
+
+    <tr class="align-middle">
+        
+        
+            <td><a href="/details_user/<%= row._id %>"><%= row.nom %> <%= row.prenom %></a></td>
+        <td><%= row.cin %></td>
+        <td><%= row.diplome %></td>
+        <td><%= row.score %></td>
+        <td><%= row.status_post %></td>
+        
+    
+         
+    </tr>
+
+    <% }) %>
+   
